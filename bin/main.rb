@@ -5,7 +5,7 @@ class TicTacToe
     @player1 = ''
     @player2 = ''
     # @player_one_played = false
-    # @moves = []
+    @moves = []
   end
 
   def welcome_message
@@ -24,18 +24,22 @@ class TicTacToe
     "
   end
 
-  def print_game_board(moves_array = [])
+  def print_game_board(player_input = nil, player = nil)
 
-    if moves_array.length != 0
-      # analyze the moves array
-      # set variable move1 .. move9 depending on the moves_array values
-    else  
-      move1 = '1'; move2 = '2'; move3 = '3'; move4 = '4'
-      move5 = '5'; move6 = '6'; move7 = '7'; move8 = '8'
-      move9 = '9'
-    end
-    
-    array = [move1, move2, move3, move4, move5, move6, move7, move8, move9]
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    #if player_input and player are not nil
+
+      # if array.include? player_input
+      #   array.length - 1.times do |i|
+      #     if array[i] == player_input
+      #       array[i]  = player == @player1 ? "X" : "O"
+      #       break
+      #     end
+      #   end
+      # end
+
+    #end if
 
     puts '---------------------------'
     puts '|        |       |        |'
@@ -88,6 +92,8 @@ class TicTacToe
 
     players_names
 
+    puts "#{@player1} will use \"X\"\n#{@player2} will use \"O\""
+
     # interest = true;
     # while interest 
     #   players_turn
@@ -97,7 +103,7 @@ class TicTacToe
   end
 
   def players_turn 
-    # print_game_board
+    print_game_board
 
     # initialize move counter to 1
 
@@ -108,8 +114,9 @@ class TicTacToe
       # if player_input is numeric and selection is available
 
         #increment move counter
-
-        # update_board(player_input)
+        
+        #update @moves array
+        #print_game_board(player_input, player)
         # break if is_winning_move? or is_drawing_move?
       
       # else
@@ -124,10 +131,24 @@ class TicTacToe
 
   end
 
-  # def update_board(player_input)
-  #   @moves.push(player_input)
-  #   print_game_board(@moves)
-  # end
+  def is_winning_move?
+    counter = 0
+    #while counter is less than @moves.length
+      #if winning condition
+        #return true
+      # end if
+      #increment counter
+    #end while
+    #false
+  end
+
+  def is_drawing_move?
+    #if @move.length is equal to 8 && !is_winning_move?
+      # return true
+    #end if
+    #false
+  end
+
 end
 
 play = TicTacToe.new
