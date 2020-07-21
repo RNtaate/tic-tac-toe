@@ -20,8 +20,10 @@ class TicTacToe
     \t\t\t--------------
     "
 
-    puts "#{print_game_board}"
+    print_game_board
 
+    puts "\n\t\t\t*How to play the game?*
+    \t\t\t---------------------------"
     # players_names
   end
 
@@ -42,28 +44,30 @@ class TicTacToe
   end
 
   def print_game_board
-    move_1 = " 1 "
-    move_2 = " 2 "
-    move_3 = " 3 "
-    move_4 = " 4 "
-    move_5 = " 5 "
-    move_6 = " 6 "
-    move_7 = " 7 "
-    move_8 = " 8 "
-    move_9 = " 9 "
+    move_1 = "1"
+    move_2 = "2"
+    move_3 = "3"
+    move_4 = "4"
+    move_5 = "5"
+    move_6 = "6"
+    move_7 = "7"
+    move_8 = "8"
+    move_9 = "9"
     array = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9]
 
-    puts "        |       |       "
-    puts "   #{array[0]}    |   #{array[1]}   |   #{array[2]}   "
-    puts "        |       |       "
-    puts " -------+-------+--------"
-    puts "        |       |       "
-    puts "   #{array[3]}    |   #{array[4]}   |   #{array[5]}   "
-    puts "        |       |       "
-    puts " -------+-------+--------"
-    puts "        |       |       "
-    puts "   #{array[6]}    |   #{array[7]}   |   #{array[8]}   "
-    puts "        |       |       "
+    puts "---------------------------"
+    puts "|        |       |        |"
+    puts "    #{array[0]}    |   #{array[1]}   |   #{array[2]}   "
+    puts "|        |       |        |"
+    puts "  -------+-------+--------"
+    puts "|        |       |        |"
+    puts "    #{array[3]}    |   #{array[4]}   |   #{array[5]}   "
+    puts "|        |       |        |"
+    puts "  -------+-------+--------"
+    puts "|        |       |        |"
+    puts "    #{array[6]}    |   #{array[7]}   |   #{array[8]}   "
+    puts "|        |       |        |"
+    puts "---------------------------"
   end
 end
 
