@@ -23,8 +23,17 @@ class TicTacToe
     print_game_board
 
     puts "\n\t\t\t*How to play the game?*
-    \t\t\t---------------------------"
-    # players_names
+    \t\t\t---------------------------
+    1. You need to enter the number whose position you desire to play.
+    2. Each player has one turn."
+
+    puts "Do you want to continue? Enter Y if yes otherwise enter any other key"
+    input = gets.chomp
+    if continue?(input)
+      players_names
+    else
+      return
+    end
   end
 
   def players_names
@@ -69,10 +78,15 @@ class TicTacToe
     puts "|        |       |        |"
     puts "---------------------------"
   end
+
+  def continue?(input)
+    if input.downcase == 'y'
+      return true
+    end
+    return false
+  end
 end
 
 play = TicTacToe.new
 
 play.greet
-
-# play.players_names
