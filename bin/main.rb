@@ -7,7 +7,16 @@ class TicTacToe
   end
 
   def greet
-    puts 'Hello'
+    puts "\t\t\t\t\"TIC TAC TOE GAME\".
+    \t\t\t\t\===================
+    It is a game played by 2 individuals. The goal is to make an alignment of selections either vertically, or horizontally or diagonally."
+    puts "\n\t\t\t*Here are the rules of the game.*
+    \t\t\t---------------------------------
+    rule 1: Player 1 will use \"X\" as pattern and player 2 will use \"O\" as pattern.
+    rule 2: A player wins if they make the same pattern vertically, horizontally or diagonally.
+    rule 3: If the board is filled with no win, then that will be a draw.
+    rule 4: A player is not allowed to make the same selection as their counterpart."
+    puts " "
   end
 
   def players_names
@@ -28,5 +37,7 @@ class TicTacToe
 end
 
 play = TicTacToe.new
+
+play.greet
 
 play.players_names
