@@ -94,40 +94,50 @@ class TicTacToe
 
     puts "#{@player1} will use \"X\"\n#{@player2} will use \"O\""
 
-    # interest = true;
-    # while interest 
-    #   players_turn
-    #   input = gets.chomp
-    #   interest = continue(input)
-    # end
+    interest = true;
+    while interest 
+      players_turn
+      input = gets.chomp
+      interest = continue?(input)
+    end
   end
 
-  def players_turn 
+  def players_turn
     print_game_board
 
-    # initialize move counter to 1
+    #Mocking the game flow
+    puts "#{@player1} is your turn now, choose number between 1 - 9"
+    player1_input = gets.chomp
+    puts "#{@player2} is your turn now, choose number between 1 - 9"
+    player2_input = gets.chomp
 
-    # while the move counter is less than 9, 
+    #Logic of the actual game
+=begin 
+    
+    initialize move counter to 1
 
-      # Display player's turn and get player_input
+     while the move counter is less than 9, 
 
-      # if player_input is numeric and selection is available
+       Display player's turn and get player_input
 
-        #increment move counter
+       if player_input is numeric and selection is available
+
+        increment move counter
         
-        #update @moves array
-        #print_game_board(player_input, player)
-        # break if is_winning_move? or is_drawing_move?
+        update @moves array
+        print_game_board(player_input, player)
+         break if is_winning_move? or is_drawing_move?
       
-      # else
-        # display invalid input
-      #end if
+       else
+         display invalid input
+      end if
 
-    #end while
+    end while
 
-    #dislay winner or draw 
+    dislay winner or draw 
 
-    #Display, "Do you want to continue? if yes enter y other wise enter any other key"
+    Display, "Do you want to continue? if yes enter y other wise enter any other key"
+=end
 
   end
 
