@@ -16,7 +16,13 @@ class TicTacToe
     rule 2: A player wins if they make the same pattern vertically, horizontally or diagonally.
     rule 3: If the board is filled with no win, then that will be a draw.
     rule 4: A player is not allowed to make the same selection as their counterpart."
-    puts " "
+    puts "\n\t\t\t*Game Board*
+    \t\t\t--------------
+    "
+
+    puts "#{print_game_board}"
+
+    # players_names
   end
 
   def players_names
@@ -34,10 +40,35 @@ class TicTacToe
       @player_2 = gets.chomp
     end
   end
+
+  def print_game_board
+    move_1 = " 1 "
+    move_2 = " 2 "
+    move_3 = " 3 "
+    move_4 = " 4 "
+    move_5 = " 5 "
+    move_6 = " 6 "
+    move_7 = " 7 "
+    move_8 = " 8 "
+    move_9 = " 9 "
+    array = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9]
+
+    puts "        |       |       "
+    puts "   #{array[0]}    |   #{array[1]}   |   #{array[2]}   "
+    puts "        |       |       "
+    puts " -------+-------+--------"
+    puts "        |       |       "
+    puts "   #{array[3]}    |   #{array[4]}   |   #{array[5]}   "
+    puts "        |       |       "
+    puts " -------+-------+--------"
+    puts "        |       |       "
+    puts "   #{array[6]}    |   #{array[7]}   |   #{array[8]}   "
+    puts "        |       |       "
+  end
 end
 
 play = TicTacToe.new
 
 play.greet
 
-play.players_names
+# play.players_names
