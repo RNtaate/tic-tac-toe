@@ -5,7 +5,7 @@ class TicTacToe
     @player1 = ''
     @player2 = ''
     # @player_one_played = false
-    @moves = []
+    # @moves = []
   end
 
   def welcome_message
@@ -24,15 +24,16 @@ class TicTacToe
     "
   end
 
-  def print_game_board(num = nil)
-    #if num != nil
-      #set variable move1 .. move9 depending on num
-    #end if
-    move1 = '1', move2 = '2', move3 = '3', move4 = '4'
-    move5 = '5', move6 = '6', move7 = '7', move8 = '8'
-    move9 = '9'
+  def print_game_board(moves_array = [])
 
-
+    if moves_array.length != 0
+      # analyze the moves array
+      # set variable move1 .. move9 depending on the moves_array values
+    else  
+      move1 = '1'; move2 = '2'; move3 = '3'; move4 = '4'
+      move5 = '5'; move6 = '6'; move7 = '7'; move8 = '8'
+      move9 = '9'
+    end
     
     array = [move1, move2, move3, move4, move5, move6, move7, move8, move9]
 
@@ -96,7 +97,7 @@ class TicTacToe
   end
 
   def players_turn 
-    print_game_board
+    # print_game_board
 
     # initialize move counter to 1
 
@@ -108,8 +109,8 @@ class TicTacToe
 
         #increment move counter
 
-        update_board(player_input)
-        break if is_winning_move? or is_drawing_move?
+        # update_board(player_input)
+        # break if is_winning_move? or is_drawing_move?
       
       # else
         # display invalid input
@@ -123,9 +124,10 @@ class TicTacToe
 
   end
 
-  def update_board(player_input)
-    print_game_board(player_input)
-  end
+  # def update_board(player_input)
+  #   @moves.push(player_input)
+  #   print_game_board(@moves)
+  # end
 end
 
 play = TicTacToe.new
