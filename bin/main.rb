@@ -24,22 +24,21 @@ class TicTacToe
     "
   end
 
-  def print_game_board(player_input = nil, player = nil)
-
+  def print_game_board(_player_input = nil, _player = nil)
     array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    #if player_input and player are not nil
+    # if player_input and player are not nil
 
-      # if array.include? player_input
-      #   array.length - 1.times do |i|
-      #     if array[i] == player_input
-      #       array[i]  = player == @player1 ? "X" : "O"
-      #       break
-      #     end
-      #   end
-      # end
+    # if array.include? player_input
+    #   array.length - 1.times do |i|
+    #     if array[i] == player_input
+    #       array[i]  = player == @player1 ? "X" : "O"
+    #       break
+    #     end
+    #   end
+    # end
 
-    #end if
+    # end if
 
     puts '---------------------------'
     puts '|        |       |        |'
@@ -94,8 +93,8 @@ class TicTacToe
 
     puts "#{@player1} will use \"X\"\n#{@player2} will use \"O\""
 
-    interest = true;
-    while interest 
+    interest = true
+    while interest
       players_turn
       input = gets.chomp
       interest = continue?(input)
@@ -105,60 +104,59 @@ class TicTacToe
   def players_turn
     print_game_board
 
-    #Mocking the game flow
+    # Mocking the game flow
     puts "#{@player1} is your turn now, choose number between 1 - 9"
-    player1_input = gets.chomp
+    player_one_input = gets.chomp
+    puts "#{@player1} now, your move is displayed on the board on position #{player_one_input}"
     puts "#{@player2} is your turn now, choose number between 1 - 9"
-    player2_input = gets.chomp
+    player_two_input = gets.chomp
+    puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
 
-    #Logic of the actual game
-=begin 
-    
-    initialize move counter to 1
-
-     while the move counter is less than 9, 
-
-       Display player's turn and get player_input
-
-       if player_input is numeric and selection is available
-
-        increment move counter
-        
-        update @moves array
-        print_game_board(player_input, player)
-         break if is_winning_move? or is_drawing_move?
-      
-       else
-         display invalid input
-      end if
-
-    end while
-
-    dislay winner or draw 
-
-    Display, "Do you want to continue? if yes enter y other wise enter any other key"
-=end
-
+    # Logic of the actual game
+    #
+    #
+    #     initialize move counter to 1
+    #
+    #      while the move counter is less than 9,
+    #
+    #        Display player's turn and get player_input
+    #
+    #        if player_input is numeric and selection is available
+    #
+    #         increment move counter
+    #
+    #         update @moves array
+    #         print_game_board(player_input, player)
+    #          break if winning_move? or drawing_move?
+    #
+    #        else
+    #          display invalid input
+    #       end if
+    #
+    #     end while
+    #
+    #     dislay winner or draw
+    #
+    #     Display, "Do you want to continue? if yes enter y other wise enter any other key"
   end
 
-  def is_winning_move?
-    counter = 0
-    #while counter is less than @moves.length
-      #if winning condition
-        #return true
-      # end if
-      #increment counter
-    #end while
-    #false
+  def winning_move?
+    # counter = 0
+    # while counter is less than @moves.length
+    # if winning condition
+    # return true
+    # end if
+    # increment counter
+    # end while
+    # false
   end
 
-  def is_drawing_move?
-    #if @move.length is equal to 8 && !is_winning_move?
-      # return true
-    #end if
-    #false
+  def drawing_move?
+    # if @move.length is equal to 8 && !winning_move?
+    # return true
+    # end if
+    # false
   end
-
 end
 
 play = TicTacToe.new
