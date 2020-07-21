@@ -4,6 +4,7 @@ class TicTacToe
   def initialize
     @player_1 = ''
     @player_2 = ''
+    @player_1_played = false
   end
 
   def greet
@@ -84,6 +85,11 @@ class TicTacToe
       return true
     end
     return false
+  end
+
+  def players_turn
+    print_game_board
+    player_1_played? = false
   end
 end
 
