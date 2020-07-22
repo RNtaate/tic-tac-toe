@@ -5,11 +5,13 @@ require './lib/game.rb'
 
 class TicTacToe
   def initialize
-    @player1 = ''
-    @player2 = ''
+    # @players.player_one = ''
+    # @players.player_two = ''
     @moves = []
+    @players = Players.new('', '')
   end
 
+  private
   def welcome_message
     puts "\t\t\t\t\"TIC TAC TOE GAME\".
     \t\t\t\t\===================
@@ -28,20 +30,21 @@ class TicTacToe
 
   def players_names
     puts 'Player 1: Enter your name: '
-    @player1 = gets.chomp
-    while @player1 == ''
+    @players.player_one = gets.chomp
+    while @players.player_one == ''
       puts 'Player 1, you did not enter a valid name, please enter your name: '
-      @player1 = gets.chomp
+      @players.player_one = gets.chomp
     end
 
     puts 'Player 2: Enter your name: '
-    @player2 = gets.chomp
-    while @player2 == ''
+    @players.player_two = gets.chomp
+    while @players.player_two == ''
       puts 'Player 2, you did not enter a valid name, please enter your name: '
-      @player2 = gets.chomp
+      @players.player_two = gets.chomp
     end
   end
 
+  public
   def greet
     welcome_message
 
@@ -58,7 +61,7 @@ class TicTacToe
 
     players_names
 
-    puts "#{@player1} will use \"X\"\n#{@player2} will use \"O\""
+    puts "#{@players.player_one} will use \"X\"\n#{@players.player_two} will use \"O\""
 
     puts board.print_board(@moves)
 
@@ -73,73 +76,52 @@ class TicTacToe
     end
   end
 
+  private
   def players_turn
     board = Board.new
-    player = Players.new(@player1, @player2)
+    # player = Players.new(@players.player_one, @players.player_two)
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
-    # winner = player.player_won(@moves)
 
     while moves_counter <= 9
       puts "moves_counter: #{moves_counter}"
       if moves_counter.odd?
-        until player.valid_move?(player_one_input, @moves)
-          puts "#{@player1} is your turn now, choose number between 1 - 9"
+        puts "#{@players.player_one} is your turn now, choose number between 1 - 9"
+        player_one_input = gets.chomp.to_i
+
+        until @players.valid_move?(player_one_input, @moves)
+          puts "Invalid input, Enter a valid number"
           player_one_input = gets.chomp.to_i
         end
         @moves << player_one_input
         puts board.print_board(@moves)
 
         if (moves_counter > 4) and Game.winning_move?(@moves)
-          puts "Congratulations!, #{@player1} you won the game"
-          break
+          puts "Congratulations!, #{@players.player_one} you won the game"
+          return
         end
 
       else
-        until player.valid_move?(player_two_input, @moves)
-          puts "#{@player2} is your turn now, choose number between 1 - 9"
+        puts "#{@players.player_two} is your turn now, choose number between 1 - 9"
+        player_two_input = gets.chomp.to_i
+
+        until @players.valid_move?(player_two_input, @moves)
+          puts "Invalid Input, Enter a valid number"
           player_two_input = gets.chomp.to_i
         end
         @moves << player_two_input
         puts board.print_board(@moves)
 
         if (moves_counter > 4) and Game.winning_move?(@moves)
-          puts "Congratulations!, #{@player2} you won the game"
-          break
+          puts "Congratulations!, #{@players.player_two} you won the game"
+          return
         end
       end
       moves_counter += 1
     end
 
-    # puts "Congratulations!" if winner
-
-    # Logic of the actual game
-    #
-    #
-    #     initialize move counter to 1
-    #
-    #      while the move counter is less than 9,
-    #
-    #        Display player's turn and get player_input
-    #
-    #        if player_input is numeric and selection is available
-    #
-    #         increment move counter
-    #
-    #         update @moves array
-    #         print_game_board(player_input, player)
-    #          break if winning_move? or drawing_move?
-    #
-    #        else
-    #          display invalid input
-    #       end if
-    #
-    #     end while
-    #
-    #     dislay winner or draw
-    #
-    #     Display, "Do you want to continue? if yes enter y other wise enter any other key"
+    puts "This game is a Draw"
   end
 end
 

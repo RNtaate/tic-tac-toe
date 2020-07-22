@@ -1,6 +1,5 @@
-require_relative 'game'
-
 class Players
+  attr_accessor :player_one, :player_two
   def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
@@ -11,10 +10,4 @@ class Players
 
     false
   end
-
-  # def player_won(moves_array)
-  #     game = Game.new(moves_array)
-  #     winner = game.winning_move?(@player_one, @player_two)
-  #     return "Congratulations #{winner} for winning the game" if winner
-  # end
 end
