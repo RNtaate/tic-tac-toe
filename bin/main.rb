@@ -5,8 +5,6 @@ require './lib/game.rb'
 
 class TicTacToe
   def initialize
-    # @players.player_one = ''
-    # @players.player_two = ''
     @moves = []
     @players = Players.new('', '')
   end
@@ -63,7 +61,6 @@ class TicTacToe
 
     puts "#{@players.player_one} will use \"X\"\n#{@players.player_two} will use \"O\""
 
-    puts board.print_board(@moves)
 
     interest = true
     while interest
@@ -79,7 +76,7 @@ class TicTacToe
   private
   def players_turn
     board = Board.new
-    # player = Players.new(@players.player_one, @players.player_two)
+    puts board.print_board(@moves)
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
@@ -91,7 +88,7 @@ class TicTacToe
         player_one_input = gets.chomp.to_i
 
         until @players.valid_move?(player_one_input, @moves)
-          puts "Invalid input, Enter a valid number"
+          puts "\nINVALID INPUT!!, Either Input has already been played or it is not a number.\nEnter a valid number which is between 1 - 9"
           player_one_input = gets.chomp.to_i
         end
         @moves << player_one_input
@@ -107,7 +104,7 @@ class TicTacToe
         player_two_input = gets.chomp.to_i
 
         until @players.valid_move?(player_two_input, @moves)
-          puts "Invalid Input, Enter a valid number"
+          puts "\nINVALID INPUT!!, Either Input has already been played or it is not a number.\nEnter a valid number which is between 1 - 9"
           player_two_input = gets.chomp.to_i
         end
         @moves << player_two_input
