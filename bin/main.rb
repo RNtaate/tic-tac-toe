@@ -72,43 +72,28 @@ class TicTacToe
     moves_counter = 1
 
     while moves_counter <= 9
+      player_number = moves_counter.odd? ? @players.player_one : @players.player_two
+      players_enters(player_number, board, moves_counter)
+      return if (moves_counter > 4) and Game.winning_move?(@moves)
 
-      if moves_counter.odd?
-        puts "#{@players.player_one} is your turn now, choose number between 1 - 9"
-        player_one_input = gets.chomp.to_i
-
-        until @players.valid_move?(player_one_input, @moves)
-          puts Messages::INVALID_INPUT
-          player_one_input = gets.chomp.to_i
-        end
-        @moves << player_one_input
-        puts board.print_board(@moves)
-
-        if (moves_counter > 4) and Game.winning_move?(@moves)
-          puts "Congratulations!, #{@players.player_one} you won the game"
-          return
-        end
-
-      else
-        puts "#{@players.player_two} is your turn now, choose number between 1 - 9"
-        player_two_input = gets.chomp.to_i
-
-        until @players.valid_move?(player_two_input, @moves)
-          puts Messages::INVALID_INPUT
-          player_two_input = gets.chomp.to_i
-        end
-        @moves << player_two_input
-        puts board.print_board(@moves)
-
-        if (moves_counter > 4) and Game.winning_move?(@moves)
-          puts "Congratulations!, #{@players.player_two} you won the game"
-          return
-        end
-      end
       moves_counter += 1
     end
 
     puts Messages::GAME_IS_A_DRAW
+  end
+
+  def players_enters(player_number, board, moves_counter)
+    puts "#{player_number} is your turn now, choose number between 1 - 9"
+    player_input = gets.chomp.to_i
+
+    until @players.valid_move?(player_input, @moves)
+      puts Messages::INVALID_INPUT
+      player_input = gets.chomp.to_i
+    end
+    @moves << player_input
+    puts board.print_board(@moves)
+
+    puts "Congratulations!, #{player_number} you won the game" if (moves_counter > 4) and Game.winning_move?(@moves)
   end
 end
 
