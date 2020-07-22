@@ -85,6 +85,7 @@ class TicTacToe
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
+    winner = player.player_won(@moves)
     while moves_counter <= 9 do
       until player.valid_move?(player_one_input, @moves)
         puts "#{@player1} is your turn now, choose number between 1 - 9"
@@ -95,6 +96,7 @@ class TicTacToe
       until player.valid_move?(player_two_input, @moves)
         puts "#{@player2} is your turn now, choose number between 1 - 9"
         player_two_input = gets.chomp
+        break if winner
       end
       @moves << player_two_input
       i =+ 1
@@ -102,7 +104,6 @@ class TicTacToe
 
     puts board.print_board(@moves)
 
-    winner = player.player_won(@moves)
     puts winner if winner
     
 
