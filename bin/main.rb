@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require './lib/board.rb'
+require './lib/players.rb'
 
 class TicTacToe
   def initialize
@@ -7,8 +8,7 @@ class TicTacToe
     @player2 = ''
     # @player_one_played = false
     @moves = [3, 8]
-  end  # def print_game_board(moves_array)
-  #   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  end
 
   def welcome_message
     puts "\t\t\t\t\"TIC TAC TOE GAME\".
@@ -77,8 +77,6 @@ class TicTacToe
   end
 
   def players_turn
-    
-
     # Mocking the game flow
     # puts "#{@player1} is your turn now, choose number between 1 - 9"
     # player_one_input = gets.chomp
@@ -86,6 +84,29 @@ class TicTacToe
     # puts "#{@player2} is your turn now, choose number between 1 - 9"
     # player_two_input = gets.chomp
     # puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
+
+    board = Board.new(moves_array)
+    player = Player.new(@player1, @player2)
+    player_one_input = ''
+    player_two_input = ''
+    moves_counter = 1
+    while moves_counter <= 9 do
+      until player.valid_move? player_one_input
+        puts "#{@player1} is your turn now, choose number between 1 - 9"
+        player_one_input = gets.chomp
+      end
+      @move << player_one_input
+
+      until player.valid_move? player_two_input
+        puts "#{@player2} is your turn now, choose number between 1 - 9"
+        player_two_input = gets.chomp
+      end
+      @move << player_two_input
+      i =+ 1
+    end
+
+    puts board.print_board(@moves)
+    
 
     # Logic of the actual game
     #
@@ -115,23 +136,7 @@ class TicTacToe
     #     Display, "Do you want to continue? if yes enter y other wise enter any other key"
   end
 
-  def winning_move?
-    # counter = 0
-    # while counter is less than @moves.length
-    # if winning condition
-    # return true
-    # end if
-    # increment counter
-    # end while
-    # false
-  end
-
-  def drawing_move?
-    # if @move.length is equal to 8 && !winning_move?
-    # return true
-    # end if
-    # false
-  end
+  
 end
 
 play = TicTacToe.new
