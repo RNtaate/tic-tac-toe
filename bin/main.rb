@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
+require './lib/board.rb'
 
 class TicTacToe
   def initialize
     @player1 = ''
     @player2 = ''
     # @player_one_played = false
-    @moves = []
-  end
+    @moves = [3, 8]
+  end  # def print_game_board(moves_array)
+  #   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   def welcome_message
     puts "\t\t\t\t\"TIC TAC TOE GAME\".
@@ -24,8 +26,9 @@ class TicTacToe
     "
   end
 
-  def print_game_board(_player_input = nil, _player = nil)
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  
+  # def print_game_board(moves_array)
+  #   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     # if player_input and player are not nil
 
@@ -40,20 +43,33 @@ class TicTacToe
 
     # end if
 
-    puts '---------------------------'
-    puts '|        |       |        |'
-    puts "    #{array[0]}    |   #{array[1]}   |   #{array[2]}   "
-    puts '|        |       |        |'
-    puts '  -------+-------+--------'
-    puts '|        |       |        |'
-    puts "    #{array[3]}    |   #{array[4]}   |   #{array[5]}   "
-    puts '|        |       |        |'
-    puts '  -------+-------+--------'
-    puts '|        |       |        |'
-    puts "    #{array[6]}    |   #{array[7]}   |   #{array[8]}   "
-    puts '|        |       |        |'
-    puts '---------------------------'
-  end
+    # i = 0
+    # while i < moves_array.length do
+    #   if array.include? moves_array[i]
+    #     array.length - 1.times do |j|
+    #       if array[j] == moves_array[i]
+    #         array[j] = (i + 1).odd? ? "X" : "O"
+    #         break
+    #       end
+    #     end
+    #   end
+    # end
+
+
+  #   puts '---------------------------'
+  #   puts '|        |       |        |'
+  #   puts "    #{array[0]}    |   #{array[1]}   |   #{array[2]}   "
+  #   puts '|        |       |        |'
+  #   puts '  -------+-------+--------'
+  #   puts '|        |       |        |'
+  #   puts "    #{array[3]}    |   #{array[4]}   |   #{array[5]}   "
+  #   puts '|        |       |        |'
+  #   puts '  -------+-------+--------'
+  #   puts '|        |       |        |'
+  #   puts "    #{array[6]}    |   #{array[7]}   |   #{array[8]}   "
+  #   puts '|        |       |        |'
+  #   puts '---------------------------'
+  # end
 
   def continue?(input)
     return true if input.downcase == 'y'
@@ -79,7 +95,9 @@ class TicTacToe
 
   def greet
     welcome_message
-    print_game_board
+    # print_game_board
+    board = Board.new
+    board.print_board
     puts "\n\t\t\t*How to play the game?*
     \t\t\t---------------------------
     1. You need to enter the number whose position you desire to play.
@@ -93,24 +111,26 @@ class TicTacToe
 
     puts "#{@player1} will use \"X\"\n#{@player2} will use \"O\""
 
-    interest = true
-    while interest
-      players_turn
-      input = gets.chomp
-      interest = continue?(input)
-    end
+    board.print_board(@moves)
+
+    # interest = true
+    # while interest
+    #   players_turn
+    #   input = gets.chomp
+    #   interest = continue?(input)
+    # end
   end
 
   def players_turn
-    print_game_board
+    # print_game_board
 
     # Mocking the game flow
-    puts "#{@player1} is your turn now, choose number between 1 - 9"
-    player_one_input = gets.chomp
-    puts "#{@player1} now, your move is displayed on the board on position #{player_one_input}"
-    puts "#{@player2} is your turn now, choose number between 1 - 9"
-    player_two_input = gets.chomp
-    puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
+    # puts "#{@player1} is your turn now, choose number between 1 - 9"
+    # player_one_input = gets.chomp
+    # puts "#{@player1} now, your move is displayed on the board on position #{player_one_input}"
+    # puts "#{@player2} is your turn now, choose number between 1 - 9"
+    # player_two_input = gets.chomp
+    # puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
 
     # Logic of the actual game
     #
