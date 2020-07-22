@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require './lib/board.rb'
 require './lib/players.rb'
+require './lib/game.rb'
 
 class TicTacToe
   def initialize
@@ -24,12 +25,6 @@ class TicTacToe
     puts "\n\t\t\t*Game Board*
     \t\t\t--------------
     "
-  end
-
-  def continue?(input)
-    return true if input.downcase == 'y'
-
-    false
   end
 
   def players_names
@@ -60,7 +55,7 @@ class TicTacToe
 
     puts 'Do you want to continue? Enter Y if yes otherwise enter any other key'
     input = gets.chomp
-    return unless continue?(input)
+    return unless Game.continue?(input)
 
     players_names
 
@@ -68,12 +63,12 @@ class TicTacToe
 
     puts board.print_board(@moves)
 
-    # interest = true
-    # while interest
-    #   players_turn
-    #   input = gets.chomp
-    #   interest = continue?(input)
-    # end
+    interest = true
+    while interest
+      players_turn
+      input = gets.chomp
+      interest = Game.continue?(input)
+    end
   end
 
   def players_turn
@@ -85,27 +80,30 @@ class TicTacToe
     # player_two_input = gets.chomp
     # puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
 
-    board = Board.new(moves_array)
-    player = Player.new(@player1, @player2)
+    board = Board.new
+    player = Players.new(@player1, @player2)
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
     while moves_counter <= 9 do
-      until player.valid_move? player_one_input
+      until player.valid_move?(player_one_input, @moves)
         puts "#{@player1} is your turn now, choose number between 1 - 9"
         player_one_input = gets.chomp
       end
-      @move << player_one_input
+      @moves << player_one_input
 
-      until player.valid_move? player_two_input
+      until player.valid_move?(player_two_input, @moves)
         puts "#{@player2} is your turn now, choose number between 1 - 9"
         player_two_input = gets.chomp
       end
-      @move << player_two_input
+      @moves << player_two_input
       i =+ 1
     end
 
     puts board.print_board(@moves)
+
+    winner = player.player_won(@moves)
+    puts winner if winner
     
 
     # Logic of the actual game

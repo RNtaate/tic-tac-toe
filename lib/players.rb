@@ -1,4 +1,5 @@
 require_relative 'board'
+require_relative 'game'
 
 class Players
     def initialize(player_one, player_two)
@@ -12,7 +13,9 @@ class Players
         false
     end
 
-    def play_check(moves_array)
-        
+    def player_won(moves_array)
+        game = Game.new(moves_array)
+        winner = game.winning_move?(@player_one, @player_two)
+        return "Congratulations #{winner} for winning the game" if winner
     end
 end

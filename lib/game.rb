@@ -1,9 +1,9 @@
-class ClassName
+class Game
     def initialize(moves)
         @moves = moves
     end
 
-    def winning_move?
+    def winning_move?(player1, player2)
         # counter = 0
         # while counter is less than @moves.length
         # if winning condition
@@ -12,6 +12,7 @@ class ClassName
         # increment counter
         # end while
         # false
+        return true
       end
     
       def drawing_move?
@@ -19,5 +20,13 @@ class ClassName
         # return true
         # end if
         # false
+        return false
+      end
+
+
+      def self.continue?(input)
+        return true if input.downcase == 'y'
+
+        false
       end
 end
