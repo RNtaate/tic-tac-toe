@@ -3,7 +3,6 @@ class Game
     @moves = moves
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def self.winning_move?(moves_array)
     player1 = []
     player2 = []
@@ -12,27 +11,10 @@ class Game
 
     posibilities_map(player1, player2, moves_array, possiblities)
 
-    if player1.length >= 3
-      j = 0
-      while j < possiblities.length
-        return true if possiblities[j].all? { |num| player1.include? num }
-
-        j += 1
-      end
-    end
-
-    if player2.length >= 3
-      j = 0
-      while j < possiblities.length
-        return true if possiblities[j].all? { |num| player2.include? num }
-
-        j += 1
-      end
-    end
+    return true if winniner_check(player1, possiblities) or winniner_check(player2, possiblities)
 
     false
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 
   def self.continue?(input)
     return true if input.downcase == 'y'
@@ -49,6 +31,17 @@ class Game
         player2 << moves_array[i]
       end
       i += 1
+    end
+  end
+
+  def self.winniner_check(player, possiblities)
+    return unless player.length >= 3
+
+    j = 0
+    while j < possiblities.length
+      return true if possiblities[j].all? { |num| player.include? num }
+
+      j += 1
     end
   end
 end
