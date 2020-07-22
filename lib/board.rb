@@ -7,14 +7,7 @@ class Board
     unless moves_array.nil?
       i = 0
       while i < moves_array.length
-        if array.include? moves_array[i]
-          array.length.times do |j|
-            if array[j] == moves_array[i]
-              array[j] = (i + 1).odd? ? 'X' : 'O'
-              break
-            end
-          end
-        end
+        update_board(array, moves_array[i], i) if array.include? moves_array[i]
         i += 1
       end
     end
@@ -22,6 +15,15 @@ class Board
   end
 
   private
+
+  def update_board(array, move_value, curr_index)
+    array.length.times do |j|
+      if array[j] == move_value
+        array[j] = (curr_index + 1).odd? ? 'X' : 'O'
+        break
+      end
+    end
+  end
 
   def borad_ui(array)
     "
