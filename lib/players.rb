@@ -6,7 +6,7 @@ class Players
   end
 
   def valid_move?(move, moves_array)
-    return true if move.to_i > 0 and move.to_i < 10 and !moves_array.include? move
+    return true if move.to_i.positive? and move.to_i < 10 and !moves_array.include? move
 
     false
   end

@@ -83,8 +83,6 @@ class TicTacToe
   def players_turn
     board = Board.new
     puts board.print_board(@moves)
-    player_one_input
-    player_two_input
     moves_counter = 1
 
     while moves_counter <= 9

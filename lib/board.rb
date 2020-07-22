@@ -18,7 +18,12 @@ class Board
         i += 1
       end
     end
+    borad_ui(array)
+  end
 
+  private
+
+  def borad_ui(array)
     "
      ---------------------------
      |        |       |        |
