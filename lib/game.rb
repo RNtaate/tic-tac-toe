@@ -3,7 +3,7 @@ class Game
         @moves = moves
     end
 
-    def winning_move?(player1, player2)
+    def self.winning_move?(array)
         # counter = 0
         # while counter is less than @moves.length
         # if winning condition

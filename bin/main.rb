@@ -79,7 +79,7 @@ class TicTacToe
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
-    winner = player.player_won(@moves)
+    # winner = player.player_won(@moves)
 
     while moves_counter <= 9 do
       puts "moves_counter: #{moves_counter}"
@@ -90,6 +90,12 @@ class TicTacToe
         end
         @moves << player_one_input
         puts board.print_board(@moves)
+        
+        
+        if (moves_counter > 4) and Game.winning_move?(@moves)
+          puts "Congratulations!, #{@player1} you won the game"
+          break
+        end
 
       else
         until player.valid_move?(player_two_input, @moves)
@@ -98,13 +104,18 @@ class TicTacToe
         end
         @moves << player_two_input
         puts board.print_board(@moves)
+
+        if (moves_counter > 4) and Game.winning_move?(@moves)
+          puts "Congratulations!, #{@player2} you won the game"
+          break
+        end
       end
       moves_counter += 1
     end
 
   
 
-    puts "Congratulations!" if winner
+    # puts "Congratulations!" if winner
     
 
     # Logic of the actual game

@@ -12,9 +12,9 @@ class Players
         false
     end
 
-    def player_won(moves_array)
-        game = Game.new(moves_array)
-        winner = game.winning_move?(@player_one, @player_two)
-        return "Congratulations #{winner} for winning the game" if winner
-    end
+    # def player_won(moves_array)
+    #     game = Game.new(moves_array)
+    #     winner = game.winning_move?(@player_one, @player_two)
+    #     return "Congratulations #{winner} for winning the game" if winner
+    # end
 end
