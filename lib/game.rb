@@ -3,7 +3,7 @@ class Game
         @moves = moves
     end
 
-    def self.winning_move?(array)
+    def self.winning_move?(moves_array)
         # counter = 0
         # while counter is less than @moves.length
         # if winning condition
@@ -12,6 +12,7 @@ class Game
         # increment counter
         # end while
         # false
+        possiblities = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
         return true
       end
     
