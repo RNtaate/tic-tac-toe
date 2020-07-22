@@ -11,7 +11,7 @@ class Game
 
     posibilities_map(player1, player2, moves_array, possiblities)
 
-    return true if winniner_check(player1, possiblities) or winniner_check(player2, possiblities)
+    return true if winner_check(player1, possiblities) or winner_check(player2, possiblities)
 
     false
   end
@@ -34,7 +34,7 @@ class Game
     end
   end
 
-  def self.winniner_check(player, possiblities)
+  def self.winner_check(player, possiblities)
     return unless player.length >= 3
 
     j = 0
