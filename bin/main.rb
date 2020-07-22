@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Layout/LineLength
 require './lib/board.rb'
 require './lib/players.rb'
 require './lib/game.rb'
@@ -10,6 +14,7 @@ class TicTacToe
   end
 
   private
+
   def welcome_message
     puts "\t\t\t\t\"TIC TAC TOE GAME\".
     \t\t\t\t\===================
@@ -43,6 +48,7 @@ class TicTacToe
   end
 
   public
+
   def greet
     welcome_message
 
@@ -61,7 +67,6 @@ class TicTacToe
 
     puts "#{@players.player_one} will use \"X\"\n#{@players.player_two} will use \"O\""
 
-
     interest = true
     while interest
       @moves = []
@@ -74,15 +79,16 @@ class TicTacToe
   end
 
   private
+
   def players_turn
     board = Board.new
     puts board.print_board(@moves)
-    player_one_input = ''
-    player_two_input = ''
+    player_one_input
+    player_two_input
     moves_counter = 1
 
     while moves_counter <= 9
-      puts "moves_counter: #{moves_counter}"
+
       if moves_counter.odd?
         puts "#{@players.player_one} is your turn now, choose number between 1 - 9"
         player_one_input = gets.chomp.to_i
@@ -118,10 +124,15 @@ class TicTacToe
       moves_counter += 1
     end
 
-    puts "This game is a Draw"
+    puts 'This game is a Draw'
   end
 end
 
 play = TicTacToe.new
 
 play.greet
+
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Layout/LineLength
