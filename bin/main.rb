@@ -93,10 +93,13 @@ class TicTacToe
       end
       @moves << player_one_input
 
-      until player.valid_move?(player_two_input, @moves)
+      while !player.valid_move?(player_two_input, @moves) do
         puts "#{@player2} is your turn now, choose number between 1 - 9"
         player_two_input = gets.chomp
-        break if winner
+        puts "the winner is #{winner}"
+        if winner 
+         break
+        end
       end
       @moves << player_two_input
       i =+ 1
