@@ -10,7 +10,7 @@ class Board
       i = 0
       while i < moves_array.length do
         if array.include? moves_array[i]
-          (array.length - 1).times do |j|
+          (array.length).times do |j|
             if array[j] == moves_array[i]
               array[j] = (i + 1).odd? ? "X" : "O"
               break

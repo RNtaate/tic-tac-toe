@@ -7,8 +7,7 @@ class TicTacToe
   def initialize
     @player1 = ''
     @player2 = ''
-    # @player_one_played = false
-    @moves = [3, 8]
+    @moves = []
   end
 
   def welcome_message
@@ -65,46 +64,47 @@ class TicTacToe
 
     interest = true
     while interest
+      @moves = []
       players_turn
+      puts "You have finished this round."
+      puts "Do you wish to continue? Enter Y if yes otherwise enter anyother key."
       input = gets.chomp
       interest = Game.continue?(input)
     end
   end
 
   def players_turn
-    # Mocking the game flow
-    # puts "#{@player1} is your turn now, choose number between 1 - 9"
-    # player_one_input = gets.chomp
-    # puts "#{@player1} now, your move is displayed on the board on position #{player_one_input}"
-    # puts "#{@player2} is your turn now, choose number between 1 - 9"
-    # player_two_input = gets.chomp
-    # puts "#{@player2} now, your move is displayed on the board on position #{player_two_input}"
-
     board = Board.new
     player = Players.new(@player1, @player2)
     player_one_input = ''
     player_two_input = ''
     moves_counter = 1
     winner = player.player_won(@moves)
-    while moves_counter <= 9 do
-      until player.valid_move?(player_one_input, @moves)
-        puts "#{@player1} is your turn now, choose number between 1 - 9"
-        player_one_input = gets.chomp
-      end
-      @moves << player_one_input
 
-      while !player.valid_move?(player_two_input, @moves) do
-        puts "#{@player2} is your turn now, choose number between 1 - 9"
-        player_two_input = gets.chomp
-        puts "the winner is #{winner}"
+    while moves_counter <= 9 do
+      puts "moves_counter: #{moves_counter}"
+      if moves_counter.odd?
+        until player.valid_move?(player_one_input, @moves)
+          puts "#{@player1} is your turn now, choose number between 1 - 9"
+          player_one_input = gets.chomp.to_i
+        end
+        @moves << player_one_input
+        puts board.print_board(@moves)
+
+      else
+        until player.valid_move?(player_two_input, @moves)
+          puts "#{@player2} is your turn now, choose number between 1 - 9"
+          player_two_input = gets.chomp.to_i
+        end
+        @moves << player_two_input
+        puts board.print_board(@moves)
       end
-      @moves << player_two_input
-      i =+ 1
+      moves_counter += 1
     end
 
-    puts board.print_board(@moves)
+  
 
-    puts winner if winner
+    puts "Congratulations!" if winner
     
 
     # Logic of the actual game

@@ -12,7 +12,7 @@ class Game
         # increment counter
         # end while
         # false
-        return false
+        return true
       end
     
       def drawing_move?
