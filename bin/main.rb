@@ -44,7 +44,7 @@ class TicTacToe
 
   def greet
     welcome_message
-    
+
     board = Board.new
     puts board.print_board
     puts "\n\t\t\t*How to play the game?*
@@ -66,8 +66,8 @@ class TicTacToe
     while interest
       @moves = []
       players_turn
-      puts "You have finished this round."
-      puts "Do you wish to continue? Enter Y if yes otherwise enter anyother key."
+      puts 'You have finished this round.'
+      puts 'Do you wish to continue? Enter Y if yes otherwise enter anyother key.'
       input = gets.chomp
       interest = Game.continue?(input)
     end
@@ -81,7 +81,7 @@ class TicTacToe
     moves_counter = 1
     # winner = player.player_won(@moves)
 
-    while moves_counter <= 9 do
+    while moves_counter <= 9
       puts "moves_counter: #{moves_counter}"
       if moves_counter.odd?
         until player.valid_move?(player_one_input, @moves)
@@ -90,8 +90,7 @@ class TicTacToe
         end
         @moves << player_one_input
         puts board.print_board(@moves)
-        
-        
+
         if (moves_counter > 4) and Game.winning_move?(@moves)
           puts "Congratulations!, #{@player1} you won the game"
           break
@@ -113,10 +112,7 @@ class TicTacToe
       moves_counter += 1
     end
 
-  
-
     # puts "Congratulations!" if winner
-    
 
     # Logic of the actual game
     #
@@ -145,8 +141,6 @@ class TicTacToe
     #
     #     Display, "Do you want to continue? if yes enter y other wise enter any other key"
   end
-
-  
 end
 
 play = TicTacToe.new
