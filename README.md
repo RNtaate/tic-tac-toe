@@ -114,7 +114,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Microverse](htttps:www.microverse.org)
+- [Microverse](https:www.microverse.org)
 - [The Odin Project](https://www.theodinproject.com/)
 
 ## 📝 License
