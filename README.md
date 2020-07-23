@@ -6,9 +6,9 @@
 ## Essential parts of this doc (Table of content)
 [Description of tic-tac-toe](#description-of-tic-tac-toe)
 
-[How to open the tic-tac-toe game?](#how-to-open-the-tic-tac-toe-game?)
+[How to open the tic-tac-toe game](#how-to-open-the-tic-tac-toe-game)
 
-[How to play tic-tac-toe?](#how-to-play-tic-tac-toe?)
+[How to play tic-tac-toe](#how-to-play-tic-tac-toe)
 
 [Contributions](#contributions)
 
@@ -27,7 +27,7 @@
 ## Built With
 - Ruby
 
-## How to open the tic-tac-toe game?
+## How to open the tic-tac-toe game
 > This game can be played on two platforms:
 
 > A. [Your computer](#On-your-computer)
@@ -66,7 +66,7 @@
 1. When the link has been opened, click the `green run button` you will see at the top, and follow the game instructions to play.
 > Note: Whenever you terminate the game before you start it again, remember to clear your terminal by running this command `clear`
 
-## How to play tic-tac-toe?
+## How to play tic-tac-toe
 1. When the game is opened, it shows all of the instructions and asks you if you want to continue, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
 1. When you select to continue, the game will ask you names for `Player 1` and `Player 2`.
 1. After that it will start to show any player turn using the names you have just entered
