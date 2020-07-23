@@ -64,6 +64,21 @@ This project is the implementation of that tic-tac-toe, which run on CLI (Comman
 1. When all of the position have been played, without a `game win`, that will be a `game draw`
 1. At the end of every `game win` or `draw`, the game will ask if you want to play another round, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
 
+## Contributions
+
+There two ways of contributing to this project:
+
+1.  If you see something wrong or not working, please check [the issue tracker section](https://github.com/RNtaate/tic-tac-toe/issues ), if that problem you met is not in already opened issues then open the issue by click on `new issue` button.
+
+2.  If you have a solution to that, and willing to work on it, follow the below steps to contribute:
+    1.  Fork this repository
+    1.  Clone it on your local computer by running `git clone https://github.com/your-username/tic-tac-toe.git` __Replace *your username* with the username you use on github__
+    1.  Open the cloned repository which appears as a folder on your local computer with your favorite code editor
+    1.  Create a separate branch off the *master branch*,
+    1.  Write your codes which fix the issue you found
+    1.  Commit and push the branch you created
+    1.  Raise a pull request, comparing your new created branch with our original master branch [here](https://github.com/RNtaate/tic-tac-toe)
+
 ## Authors
 
 👤 **Mugirase Emmanuel**
@@ -86,7 +101,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](htttps:www.microverse.org)
-- [The Odin Prohect](https://www.theodinproject.com/)
+- [The Odin Project](https://www.theodinproject.com/)
 
 ## 📝 License
 
