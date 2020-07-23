@@ -22,8 +22,6 @@ class Game
     false
   end
 
-  private
-  
   def self.posibilities_map(player1, player2, moves_array, _possiblities)
     i = 0
     while i < moves_array.length

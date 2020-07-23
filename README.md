@@ -18,7 +18,9 @@ This project is the implementation of that tic-tac-toe, which run on CLI (Comman
 
 ## How to open the tic-tac-toe game?
 > This game can be played on two platforms:
+
 > A. Your computer
+
 > B. Online
 
 ### A. On your computer
@@ -63,6 +65,7 @@ This project is the implementation of that tic-tac-toe, which run on CLI (Comman
 1. When your mark is aligned horizontally, or vertically, or diagonally, that will be a `game win`
 1. When all of the position have been played, without a `game win`, that will be a `game draw`
 1. At the end of every `game win` or `draw`, the game will ask if you want to play another round, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
+1. The valid numbers to play are between `1 - 9`, if you play something other than that such as word, or letter, or a number above of 9 or below 1 such as zero or negative, or an already played position, the game will show a warning message and it asks you to enter another one which is valid
 
 ## Contributions
 
