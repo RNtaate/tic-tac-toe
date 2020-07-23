@@ -3,6 +3,17 @@
 
 > Implementation of tic tack toe game as outlined [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop) by the Odin Project.
 
+## Essential parts of this doc (Table of content)
+[Description of tic-tac-toe](#description-of-tic-tac-toe)
+
+[How to open the tic-tac-toe game?](#how-to-open-the-tic-tac-toe-game?)
+
+[How to play the game](#how-to-play-tic-tac-toe?)
+
+[Contributions](#contributions)
+
+[Authors](#authors)
+
 ## Description of tic-tac-toe
 
 **Tic-tac-toe** (American English), **noughts and crosses** (British English), or **Xs and Os** is a [paper-and-pencil](https://en.wikipedia.org/wiki/Paper-and-pencil_game) game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. [Read more on wikipedia...](https://en.wikipedia.org/wiki/Tic-tac-toe)
