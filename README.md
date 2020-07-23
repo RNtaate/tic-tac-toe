@@ -6,9 +6,9 @@
 ## Essential parts of this doc (Table of content)
 [Description of tic-tac-toe](#description-of-tic-tac-toe)
 
-[How to open the tic-tac-toe game?](#how-to-open-the-tic-tac-toe-game?)
+[How to open the tic-tac-toe game?](#How-to-open-the-tic-tac-toe-game?)
 
-[How to play the game](#how-to-play-tic-tac-toe?)
+[How to play tic-tac-toe?](#How-to-play-tic-tac-toe?)
 
 [Contributions](#contributions)
 
@@ -30,9 +30,9 @@
 ## How to open the tic-tac-toe game?
 > This game can be played on two platforms:
 
-> A. Your computer
+> A. [Your computer](#On-your-computer)
 
-> B. Online
+> B. [Online](#online)
 
 ### A. On your computer
 
