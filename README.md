@@ -6,9 +6,9 @@
 ## Essential parts of this doc (Table of content)
 [Description of tic-tac-toe](#description-of-tic-tac-toe)
 
-[How to open the tic-tac-toe game?](#How-to-open-the-tic-tac-toe-game?)
+[How to open the tic-tac-toe game?](#how-to-open-the-tic-tac-toe-game?)
 
-[How to play tic-tac-toe?](#How-to-play-tic-tac-toe?)
+[How to play tic-tac-toe?](#how-to-play-tic-tac-toe?)
 
 [Contributions](#contributions)
 
