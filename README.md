@@ -7,9 +7,9 @@
 
 **Tic-tac-toe** (American English), **noughts and crosses** (British English), or **Xs and Os** is a [paper-and-pencil](https://en.wikipedia.org/wiki/Paper-and-pencil_game) game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. [Read more on wikipedia...](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-This project is the implementation of that tic-tac-toe, which run on CLI (Command Line Interface), anyone can play it.
+**This project is the implementation of that tic-tac-toe, which is run on CLI (Command Line Interface), anyone can play it.**
 
-|        Game board          |          Winning Borad
+|        Game Board          |          Winning Board        |
 -----------------------------|--------------------------------
 | ![](assets/game-board.png) | ![](assets/winning-board.png) |
 
@@ -25,30 +25,30 @@ This project is the implementation of that tic-tac-toe, which run on CLI (Comman
 
 ### A. On your computer
 
-#### Pre-requisite
+#### Pre-requisites
 1. You should have [Ruby](https://www.ruby-lang.org/en/) installed on your computer.
-1. Your computer should be able to run `terminal` or `command prompt` or `bash` or `Powershell` commands
+1. Your computer should be able to run `terminal` or `command prompt` or `bash` or `Powershell` commands.
 
 #### A. 1. Using Our Release tag
 1. [Click here](https://github.com/RNtaate/tic-tac-toe/releases/tag/v1.0.0-beta) and download the zip file of this game
 1. Unzip the downloaded file to the folder of your choice
 1. Open terminal inside the unzipped folder
-1. Run the following command:
+1. Run the following command to start the game:
 
 ```bash
     bin/main.rb
 ```
-5. At that point you should see game starting and follow the rules of the game
+5. At that point you should see the game starting and follow the rules of the game.
 
 #### A. 2. Using repository
 1. Run this command `git clone https://github.com/RNtaate/tic-tac-toe.git` to clone the repository to your local computer
-1. Run `cd tic-tac-toe`
-1. Run the following command:
+1. Run `cd tic-tac-toe` to go inside the game's folder
+1. Run the following command to start the game:
 
 ```bash
     bin/main.rb
 ```
-5. At that point you should see game starting and follow the rules of the game
+5. At that point you should see the game starting and follow the rules of the game.
 
 ### B. Online
 1. click on one of the following links [descholar's link](https://repl.it/@descholarceo/tic-tac-toe#main.rb) or [Roy's link](https://repl.it/@RNtaate/tic-tac-toe#bin/main.rb)
@@ -57,23 +57,23 @@ This project is the implementation of that tic-tac-toe, which run on CLI (Comman
 
 ## How to play tic-tac-toe?
 1. When the game is opened, it shows all of the instructions and asks you if you want to continue, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
-1. When you selected to continue, the game will ask you names for `Player 1` and `Player 2`.
+1. When you select to continue, the game will ask you names for `Player 1` and `Player 2`.
 1. After that it will start to show any player turn using the names you have just entered
 1. The very first player, will be assigned `X` as their mark which will be displayed on the board in accordance with the position they played / selected
 1. The second player, will be assigned `O` as their mark which will be displayed on the board in accordance with the position they played / selected
 1. The board is made of nine positions which are numbered, if you enter a number, the number of that position will be replaced with your mark, and it won't be available for being played until `game win` or `game draw`
 1. When your mark is aligned horizontally, or vertically, or diagonally, that will be a `game win`
-1. When all of the position have been played, without a `game win`, that will be a `game draw`
-1. At the end of every `game win` or `draw`, the game will ask if you want to play another round, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
+1. When all of the positions have been played, without a `game win`, that will be a `game draw`
+1. At the end of every `game win` or `game draw`, the game will ask if you want to play another round, you are supposed to enter `y` if you want to continue, otherwise enter any other key to terminate the game.
 1. The valid numbers to play are between `1 - 9`, if you play something other than that such as word, or letter, or a number above of 9 or below 1 such as zero or negative, or an already played position, the game will show a warning message and it asks you to enter another one which is valid
 
 ## Contributions
 
-There two ways of contributing to this project:
+There are two ways of contributing to this project:
 
-1.  If you see something wrong or not working, please check [the issue tracker section](https://github.com/RNtaate/tic-tac-toe/issues ), if that problem you met is not in already opened issues then open the issue by click on `new issue` button.
+1.  If you see something wrong or not working, please check [the issue tracker section](https://github.com/RNtaate/tic-tac-toe/issues ), if that problem you met is not in already opened issues then open the issue by clicking on `new issue` button.
 
-2.  If you have a solution to that, and willing to work on it, follow the below steps to contribute:
+2.  If you have a solution to that, and you are willing to work on it, follow the below steps to contribute:
     1.  Fork this repository
     1.  Clone it on your local computer by running `git clone https://github.com/your-username/tic-tac-toe.git` __Replace *your username* with the username you use on github__
     1.  Open the cloned repository which appears as a folder on your local computer with your favorite code editor
@@ -88,7 +88,7 @@ There two ways of contributing to this project:
 
 - Github: [@descholar-ceo](https://github.com/descholar-ceo)
 - Twitter: [@descholar3](https://twitter.com/descholar3)
-- Linkedin: [MUGIRASE Emmanuel](linkedin.com/in/mugirase-emmanuel-a90b49143)
+- Linkedin: [MUGIRASE Emmanuel](https://www.linkedin.com/in/mugirase-emmanuel-a90b49143)
 
 👤 **Roy Ntaate**
 
