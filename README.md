@@ -30,9 +30,9 @@
 ## How to open the tic-tac-toe game
 > This game can be played on two platforms:
 
-> A. [Your computer](#On-your-computer)
+> A. [Your computer](#A.-On-your-computer)
 
-> B. [Online](#online)
+> B. [Online](#B.-Online)
 
 ### A. On your computer
 
