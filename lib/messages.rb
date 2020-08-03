@@ -22,7 +22,7 @@ module Messages
     1. You need to enter the number whose position you desire to play.
     2. Each player has one turn.".freeze
 
-  WANT_CONTINUE = 'Do you want to continue? Enter Y if yes otherwise enter any other key'.freeze
+  WANT_CONTINUE = 'Do you want to continue? Enter Y or Yes if yes otherwise enter any other key'.freeze
 
   INVALID_INPUT = "\nINVALID INPUT!!, Either Input has already been played or it is not a number.
 Enter a valid number which is between 1 - 9".freeze
