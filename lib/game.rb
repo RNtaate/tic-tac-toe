@@ -17,7 +17,7 @@ class Game
   end
 
   def self.continue?(input)
-    return true if input.downcase == 'y'
+    return true if input.downcase == 'y' or input.downcase == 'yes'
 
     false
   end
